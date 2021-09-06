@@ -123,20 +123,30 @@ int main()
     cin >> tc;
     while (tc--)
     {
-        int n;
-        cin >> n;
-        int count = 0;
-        for (int i = 1; i <= n; i++)
+        string s;
+        cin >> s;
+        // as alice is doing some by carrying carry to next of next
+        // they will not make any effect on consecutive terms
+
+        string s1 = "", s2 = "";
+        for (int i = 0; i < s.size(); i++)
         {
-            for (int j = 1; j <= n; j++)
+            if (i % 2 == 0)
             {
-                if (i + j == n)
-                {
-                    count++;
-                }
+                s1 += s[i];
+            }
+            else
+            {
+                s2 += s[i];
             }
         }
-        cout << count << "\n";
+        int a = stoi(s1);
+        int b = 0;
+        if (s2.size() != 0)
+            b = stoi(s2);
+
+        int ans = (a + 1) * (b + 1) - 2;
+        cout << ans << "\n";
     }
 
     return 0;
