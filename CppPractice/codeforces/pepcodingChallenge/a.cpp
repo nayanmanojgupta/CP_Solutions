@@ -106,37 +106,6 @@ void _print(map<T, V> v)
     }
     cerr << "]";
 }
-ll mod = 998244353;
-
-ll fact(ll n)
-{
-    ll res = 1;
-
-    for (ll i = 2; i <= n; i++)
-    {
-        res = (res * i) % mod;
-    }
-    return res % mod;
-}
-
-ll ncr(ll n, ll r)
-{
-    if (r > n - r)
-        r = n - r;
-
-    ll C[r + 1];
-    memset(C, 0, sizeof(C));
-
-    C[0] = 1;
-
-    for (ll i = 1; i <= n; i++)
-    {
-        for (ll j = min(i, r); j > 0; j--)
-
-            C[j] = (C[j] + C[j - 1]) % mod;
-    }
-    return C[r] % mod;
-}
 
 int main()
 {
@@ -154,57 +123,7 @@ int main()
     cin >> tc;
     while (tc--)
     {
-        ll n;
-        cin >> n;
-        vector<ll> v(n, 0);
-        for (int i = 0; i < n; i++)
-        {
-            cin >> v[i];
-        }
-
-        ll max1, max2;
-        sort(v.begin(), v.end());
-        max1 = v[n - 1];
-        max2 = v[n - 2];
-
-        // cout << max1 << " " << max2 << "\n";
-        if (max1 - max2 > 1)
-        {
-            cout << "0\n";
-            continue;
-        }
-
-        ///      ....... 5..... 5....
-        // there are valid n! ways
-        if (max1 == max2)
-        {
-            ll ans = fact(n) % mod;
-            cout << ans << '\n';
-            continue;
-        }
-
-        ll max2count = 0;
-        for (auto x : v)
-        {
-            if (x == max2)
-            {
-                max2count++;
-            }
-        }
-
-        // the invalid case is when max1 comes after max2
-        // that is .......4.....5... , here this will be invalid
-        // there will be , if there are k number of max2count , then block k+1 positions
-        // so nck+1*(k!)*((n-(k+1)))!   invalid ways
-        // so total valid = total ways - invalid ways
-
-        ll k = max2count;
-        ll total = fact(n) % mod;
-        debug(total);
-        ll invalid = (((ncr(n, k + 1) + mod) % mod) * ((fact(k) + mod) % mod) * ((fact(n - k - 1) + mod) % mod)) % mod;
-        debug(invalid);
-        ll ans = ((total - invalid) % mod + mod) % mod;
-        cout << ans << '\n';
+        
     }
 
     return 0;
