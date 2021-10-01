@@ -35,7 +35,7 @@ int main()
     {
         string palindrome;
         cin >> palindrome;
-        string result = breakPalindrome(palindrome) << endl ; 
+        string result = breakPalindrome(palindrome) ; 
         cout<<result<<endl ; 
     }
 }
