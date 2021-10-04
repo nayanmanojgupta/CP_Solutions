@@ -1,4 +1,5 @@
 // Alice vs Bob Faceoff, Sept Lunchtime 2021, Div 3
+// https://www.codechef.com/viewsolution/51611028
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization("unroll-loops")
