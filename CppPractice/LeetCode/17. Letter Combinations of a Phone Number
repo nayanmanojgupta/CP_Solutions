@@ -1,0 +1,114 @@
+class Solution {
+public:
+    
+    void calc(string digits,string op,vector<string> &ans)
+    {
+         if(digits.size()==0)
+         {
+             ans.push_back(op);
+             return;
+         }
+         if(digits[0]=='2')
+         {
+              string op1,op2,op3;
+              op1=op+'a';
+              op2=op+'b';
+              op3=op+'c';
+              digits.erase(digits.begin());
+              calc(digits,op1,ans);
+              calc(digits,op2,ans);
+              calc(digits,op3,ans);
+         }
+         else if(digits[0]=='3')
+         {
+              string op1,op2,op3;
+              op1=op+'d';
+              op2=op+'e';
+              op3=op+'f';
+              digits.erase(digits.begin());
+              calc(digits,op1,ans);
+              calc(digits,op2,ans);
+              calc(digits,op3,ans);
+         }
+         else if(digits[0]=='4')
+         {
+              string op1,op2,op3;
+              op1=op+'g';
+              op2=op+'h';
+              op3=op+'i';
+              digits.erase(digits.begin());
+              calc(digits,op1,ans);
+              calc(digits,op2,ans);
+              calc(digits,op3,ans);
+         }
+         else if(digits[0]=='5')
+         {
+              string op1,op2,op3;
+              op1=op+'j';
+              op2=op+'k';
+              op3=op+'l';
+              digits.erase(digits.begin());
+              calc(digits,op1,ans);
+              calc(digits,op2,ans);
+              calc(digits,op3,ans);
+         }
+         else if(digits[0]=='6')
+         {
+              string op1,op2,op3;
+              op1=op+'m';
+              op2=op+'n';
+              op3=op+'o';
+              digits.erase(digits.begin());
+              calc(digits,op1,ans);
+              calc(digits,op2,ans);
+              calc(digits,op3,ans);
+         }
+         else if(digits[0]=='7')
+         {
+              string op1,op2,op3,op4;
+              op1=op+'p';
+              op2=op+'q';
+              op3=op+'r';
+              op4=op+'s';
+              digits.erase(digits.begin());
+              calc(digits,op1,ans);
+              calc(digits,op2,ans);
+              calc(digits,op3,ans);
+              calc(digits,op4,ans);
+         }
+         else if(digits[0]=='8')
+         {
+              string op1,op2,op3;
+              op1=op+'t';
+              op2=op+'u';
+              op3=op+'v';
+              digits.erase(digits.begin());
+              calc(digits,op1,ans);
+              calc(digits,op2,ans);
+              calc(digits,op3,ans);
+         }
+         else if(digits[0]=='9')
+         {
+              string op1,op2,op3,op4;
+              op1=op+'w';
+              op2=op+'x';
+              op3=op+'y';
+              op4=op+'z';
+              digits.erase(digits.begin());
+              calc(digits,op1,ans);
+              calc(digits,op2,ans);
+              calc(digits,op3,ans);
+              calc(digits,op4,ans);
+         }
+    }
+    
+    
+    vector<string> letterCombinations(string digits) {
+         vector<string>ans;
+         if(digits.size()==0)
+              return ans;
+         string op="";
+         calc(digits,op,ans);
+         return ans;
+    }
+};
