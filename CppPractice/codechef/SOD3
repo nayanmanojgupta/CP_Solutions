@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#define nline '\n';
+#define ll long long
+
+using namespace std;
+void solve();
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	solve();
+	return 0;
+}
+
+void solve()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        //code here
+        ll r,l;
+        cin>>l>>r;
+        if(l%3==0 && r%3==0)
+        {
+            cout<<r/3-l/3+1<<endl;
+        }
+        else if(l%3==0 && r%3!=0)
+        {
+            cout<<r/3-l/3+1<<endl;
+        }
+        else
+        cout<<r/3-l/3<<endl;
+    }
+}
