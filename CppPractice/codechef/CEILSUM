@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+#define nline '\n';
+#define ll long long
+
+using namespace std;
+void solve();
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	solve();
+	return 0;
+}
+
+void solve()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        //code here
+        ll int a,b,x,p,q;
+        cin>>a>>b;
+        if(a==b)
+        cout<<0<<endl;
+        else
+        {
+            x=max(a,b)-1;
+            p=(b-x)/2;
+            if(p>=0 && b-x>0 && (b-x)%2!=0)
+            p=p+1;
+            q=(x-a)/2;
+            if(q>=0 && x-a>0 && (x-a)%2!=0)
+            q=q+1;
+            cout<<p+q<<endl;
+        }
+    }
+}
