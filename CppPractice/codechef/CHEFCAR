@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	for(int i=0;i<t;i++){
+	    long long int n;
+	    long long int v;
+	    cin>>n;
+	    cin>>v;
+	    
+	    long long int max=(n*(n-1))/2;
+	    long long int min;
+	    if(v>=n){
+	         min=n-1;
+	    }
+	    else{
+	        
+	    
+	     min=v-1+((n-v)*(n-v+1))/2;
+	    }
+	    cout<<max<<" "<<min<<endl;
+	}
+	return 0;
+}
