@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+#define nline '\n';
+#define ll long long
+
+using namespace std;
+void solve();
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	solve();
+	return 0;
+}
+
+void solve()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        //code here
+        int n,i,j;
+        cin>>n;
+        int a[n][n];
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<=i;j++)
+            {
+                cin>>a[i][j];
+            }
+        }
+        for(i=n-2;i>=0;i--)
+        {
+            for(j=0;j<=i;j++)
+            a[i][j]=a[i][j]+max(a[i+1][j],a[i+1][j+1]);
+        }
+        cout<<a[0][0]<<endl;
+    }
+}
